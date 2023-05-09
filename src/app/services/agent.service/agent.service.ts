@@ -19,12 +19,8 @@ export class AgentService {
 
   constructor(private http: HttpClient) { }
 
-	ngOnInit() {
-		
-	}
-
-	getMyAgent(): Observable<Agent[]> {
+	getMyAgent(): Observable<Agent> {
 		var fullUrl = join(SpaceTradersUrl.spaceTradersUrl,this.myUrl,'agent')
-		return this.http.get<Agent[]>(fullUrl, { headers: this.headers })
+		return this.http.get<Agent>(fullUrl, { headers: this.headers })
 	}
 }
