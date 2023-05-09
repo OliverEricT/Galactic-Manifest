@@ -1,3 +1,1 @@
-export const SpaceTradersUrl = {
-	spaceTradersUrl: 'https://api.spacetraders.io/v2'
-}
+export const SpaceTradersUrl = 'https://api.spacetraders.io/v2';

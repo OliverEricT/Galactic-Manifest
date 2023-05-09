@@ -18,9 +18,7 @@ export class WelcomeCardComponent implements OnInit{
 	}
 
 	getAgent(): void {
-		this.agentService.getMyAgent().subscribe(agent => {
-			this.agent = agent;
-		})
+		this.agentService.getMyAgent().subscribe(agent => this.agent = agent)
 	}
 
 }

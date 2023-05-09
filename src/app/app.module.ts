@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,6 +16,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { SiteHeaderComponent } from './components/menus/site-header/site-header.component';
 import { WelcomeCardComponent } from './components/welcome-card/welcome-card.component';
+import { StatisticsGridComponent } from './components/statistics-grid/statistics-grid.component';
+
+var AngularModules = [
+	BrowserModule,
+	AppRoutingModule,
+	BrowserAnimationsModule,
+	HttpClientModule
+]
 
 var MaterialComponents = [
 	MatCardModule,
@@ -33,12 +42,11 @@ var MenuComponents = [
     AppComponent,
 		MenuComponents,
 		SiteHeaderComponent,
-  	WelcomeCardComponent
+  	WelcomeCardComponent,
+   StatisticsGridComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-		BrowserAnimationsModule,
+    AngularModules,
 		MaterialComponents
   ],
   providers: [],

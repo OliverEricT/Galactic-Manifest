@@ -1,7 +1,17 @@
 <div>
 	<mat-card>
 		<mat-card-header>
-			{{agent.username}}
+			o7, commander {{agent.username}}
 		</mat-card-header>
+		<mat-card-content>
+			<ul>
+				<li>
+					Headquarters: {{agent.headquarters}}
+				</li>
+				<li>
+					Credits: {{agent.credits | currency}}
+				</li>
+			</ul>
+		</mat-card-content>
 	</mat-card>
 </div>
