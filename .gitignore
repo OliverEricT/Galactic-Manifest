@@ -30,7 +30,7 @@ modules/.vscode
 .nvimrc
 
 # angular outputs
-.angular
+.angular/cache
 
 # Don't check in secret files
 *secret.js
