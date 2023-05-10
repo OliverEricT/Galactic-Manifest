@@ -22,20 +22,11 @@ export class AgentService {
   constructor(private http: HttpClient) { }
 
 	getMyAgent(): Observable<Agent> {
-		//var fullUrl = join(SpaceTradersUrl.spaceTradersUrl,this.myUrl,'agent')
 		var fullUrl = `${SpaceTradersUrl}/${this.myUrl}agent`;
-		console.log(fullUrl);
 		return this.http.get<PagedData>(fullUrl, { headers: this.headers }).pipe(
 			tap((paged: PagedData) => console.log(JSON.stringify(paged.data))),
 			map((pagedData: PagedData) => {
-				var data = pagedData.data;
-				var agent: Agent = new Agent(
-					data.accountId,
-					data.symbol,
-					data.headquarters,
-					data.credits
-				);
-				return agent;
+				return pagedData.data as Agent;
 			})
 		);
 	}
