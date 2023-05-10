@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SpaceTradersUrl } from 'src/globals';
 import { Observable, map, tap } from 'rxjs';
-//import { join } from 'path';
-import { Agent } from 'src/app/interfaces/agent/agent';
+import { Agent } from 'src/app/objects/agent/agent';
 import * as secrets from '../../../assets/secrets.json';
+import { PagedData } from 'src/app/objects/paged-object/paged-data';
 
 @Injectable({
   providedIn: 'root'
@@ -25,17 +25,20 @@ export class AgentService {
 		//var fullUrl = join(SpaceTradersUrl.spaceTradersUrl,this.myUrl,'agent')
 		var fullUrl = `${SpaceTradersUrl}/${this.myUrl}agent`;
 		console.log(fullUrl);
-		return this.http.get(fullUrl, { headers: this.headers }).pipe(
-			tap((data: any) => console.log(JSON.stringify(data))),
-			map(data =>{
+		return this.http.get<PagedData>(fullUrl, { headers: this.headers }).pipe(
+			tap((paged: PagedData) => console.log(JSON.stringify(paged.data))),
+			map((pagedData: PagedData) => {
+				var data = pagedData.data;
 				var agent: Agent = new Agent(
-					data.data.accountId,
-					data.data.symbol,
-					data.data.headquarters,
-					data.data.credits
+					data.accountId,
+					data.symbol,
+					data.headquarters,
+					data.credits
 				);
 				return agent;
 			})
 		);
 	}
+
+	//getMyShips(): Observable<Sh>
 }
