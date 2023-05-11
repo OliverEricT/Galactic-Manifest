@@ -4,10 +4,7 @@ import { SpaceTradersUrl } from 'src/globals';
 import { Observable, map, tap } from 'rxjs';
 import { Agent } from 'src/app/objects/agent/agent';
 import * as secrets from '../../../assets/secrets.json';
-import { PagedData } from 'src/app/objects/paged-object/paged-data';
-import { Ship } from 'src/app/objects/ship/ship';
-import { Cargo } from 'src/app/objects/ship/cargo/cargo';
-import { Nav } from 'src/app/objects/nav/nav';
+import { PagedData } from 'src/app/objects/paged-data/paged-data';
 
 @Injectable({
   providedIn: 'root'

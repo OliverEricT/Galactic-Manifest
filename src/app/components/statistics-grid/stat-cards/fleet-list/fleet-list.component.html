@@ -1,0 +1,12 @@
+<div>
+	<mat-card>
+		<mat-card-title>Fleet List</mat-card-title>
+		<mat-card-content>
+			<ul>
+				<li *ngFor="let s of fleet">
+					{{s?.symbol}} -----> {{s?.nav?.status}}
+				</li>
+			</ul>
+		</mat-card-content>
+	</mat-card>
+</div>

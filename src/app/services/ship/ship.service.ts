@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SpaceTradersUrl } from 'src/globals';
 import { Observable, map, tap } from 'rxjs';
 import * as secrets from '../../../assets/secrets.json';
-import { PagedData } from 'src/app/objects/paged-object/paged-data';
+import { PagedData } from 'src/app/objects/paged-data/paged-data';
 import { Ship } from 'src/app/objects/ship/ship';
 import { Cargo } from 'src/app/objects/ship/cargo/cargo';
 import { Nav } from 'src/app/objects/nav/nav';

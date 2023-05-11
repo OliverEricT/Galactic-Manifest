@@ -17,6 +17,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { SiteHeaderComponent } from './components/menus/site-header/site-header.component';
 import { WelcomeCardComponent } from './components/welcome-card/welcome-card.component';
 import { StatisticsGridComponent } from './components/statistics-grid/statistics-grid.component';
+import { FleetListComponent } from './components/statistics-grid/stat-cards/fleet-list/fleet-list.component';
 
 var AngularModules = [
 	BrowserModule,
@@ -43,7 +44,8 @@ var MenuComponents = [
 		MenuComponents,
 		SiteHeaderComponent,
   	WelcomeCardComponent,
-   StatisticsGridComponent
+   StatisticsGridComponent,
+   FleetListComponent
   ],
   imports: [
     AngularModules,
