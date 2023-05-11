@@ -5,6 +5,9 @@ import { Observable, map, tap } from 'rxjs';
 import { Agent } from 'src/app/objects/agent/agent';
 import * as secrets from '../../../assets/secrets.json';
 import { PagedData } from 'src/app/objects/paged-object/paged-data';
+import { Ship } from 'src/app/objects/ship/ship';
+import { Cargo } from 'src/app/objects/ship/cargo/cargo';
+import { Nav } from 'src/app/objects/nav/nav';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +16,7 @@ export class AgentService {
 
 	private token = secrets;
 
-	private myUrl = 'my/';
+	private myUrl = 'my';
 	private headers = new HttpHeaders({
 		'Content-Type': 'application/json',
 		'Authorization': `Bearer ${this.token.Bearer}`
@@ -22,7 +25,7 @@ export class AgentService {
   constructor(private http: HttpClient) { }
 
 	getMyAgent(): Observable<Agent> {
-		var fullUrl = `${SpaceTradersUrl}/${this.myUrl}agent`;
+		var fullUrl = `${SpaceTradersUrl}/${this.myUrl}/agent`;
 		return this.http.get<PagedData>(fullUrl, { headers: this.headers }).pipe(
 			tap((paged: PagedData) => console.log(JSON.stringify(paged.data))),
 			map((pagedData: PagedData) => {
@@ -30,6 +33,4 @@ export class AgentService {
 			})
 		);
 	}
-
-	//getMyShips(): Observable<Sh>
 }

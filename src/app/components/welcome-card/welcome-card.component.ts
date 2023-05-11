@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Agent } from 'src/app/objects/agent/agent';
-import { AgentService } from 'src/app/services/agent.service/agent.service';
+import { AgentService } from 'src/app/services/agent/agent.service';
 
 @Component({
   selector: 'app-welcome-card',
