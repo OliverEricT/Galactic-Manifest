@@ -1,0 +1,10 @@
+<div mat-dialog-content>
+	<p>Please enter your authorization token or Register for a new account</p>
+	<mat-form-field appearance="fill">
+		<mat-label>Token</mat-label>
+		<input matInput [(ngModel)]="bearer.token" placeholder="Enter your token">
+	</mat-form-field>
+</div>
+<div mat-dialog-actions>
+	<button mat-button [mat-dialog-close]="bearer.token" [disabled]="bearer.token !== undefined || isDisabled">Submit</button>
+</div>

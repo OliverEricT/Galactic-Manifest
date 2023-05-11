@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SpaceTradersUrl } from 'src/globals';
 import { Observable, map, tap } from 'rxjs';
-import * as secrets from '../../../assets/secrets.json';
 import { PagedData } from 'src/app/objects/paged-data/paged-data';
 import { Ship } from 'src/app/objects/ship/ship';
 import { Cargo } from 'src/app/objects/ship/cargo/cargo';
@@ -13,12 +12,12 @@ import { Nav } from 'src/app/objects/nav/nav';
 })
 export class ShipService {
 
-	private token = secrets;
+	private token = JSON.parse(localStorage.getItem('Bearer') ?? '{}')?.token;
 
 	private myUrl = 'my/ships';
 	private headers = new HttpHeaders({
 		'Content-Type': 'application/json',
-		'Authorization': `Bearer ${this.token.Bearer}`
+		'Authorization': `Bearer ${this.token}`
 	});
 
   constructor(private http: HttpClient) { }

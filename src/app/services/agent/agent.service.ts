@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SpaceTradersUrl } from 'src/globals';
 import { Observable, map, tap } from 'rxjs';
 import { Agent } from 'src/app/objects/agent/agent';
-import * as secrets from '../../../assets/secrets.json';
 import { PagedData } from 'src/app/objects/paged-data/paged-data';
 
 @Injectable({
@@ -11,12 +10,13 @@ import { PagedData } from 'src/app/objects/paged-data/paged-data';
 })
 export class AgentService {
 
-	private token = secrets;
+	//private token = secrets;
+	private token = JSON.parse(localStorage.getItem('Bearer') ?? '{}')?.token;
 
 	private myUrl = 'my';
 	private headers = new HttpHeaders({
 		'Content-Type': 'application/json',
-		'Authorization': `Bearer ${this.token.Bearer}`
+		'Authorization': `Bearer ${this.token}`
 	});
 
   constructor(private http: HttpClient) { }
