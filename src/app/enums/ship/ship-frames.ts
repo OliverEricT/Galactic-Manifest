@@ -1,0 +1,17 @@
+export enum ShipFrames {
+	Probe = "FRAME_PROBE",
+	Drone = "FRAME_DRONE",
+	Interceptor = "FRAME_INTERCEPTOR",
+	Racer = "FRAME_RACER",
+	Fighter = "FRAME_FIGHTER",
+	Frigate = "FRAME_FRIGATE",
+	Shuttle = "FRAME_SHUTTLE",
+	Explorer = "FRAME_EXPLORER",
+	Miner = "FRAME_MINER",
+	LightFreighter = "FRAME_LIGHT_FREIGHTER",
+	HeavyFreighter = "FRAME_HEAVY_FREIGHTER",
+	Transport = "FRAME_TRANSPORT",
+	Destroyer = "FRAME_DESTROYER",
+	Cruiser = "FRAME_CRUISER",
+	Carrier = "FRAME_CARRIER",
+}
