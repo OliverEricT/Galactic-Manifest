@@ -24,6 +24,7 @@ import { WelcomeCardComponent } from './components/welcome-card/welcome-card.com
 import { StatisticsGridComponent } from './components/statistics-grid/statistics-grid.component';
 import { FleetListComponent } from './components/statistics-grid/stat-cards/fleet-list/fleet-list.component';
 import { BearerDialogComponent } from './components/dialogs/bearer-dialog/bearer-dialog.component';
+import { FleetGridComponent } from './components/fleet-grid/fleet-grid.component';
 
 var AngularModules = [
 	BrowserModule,
@@ -55,7 +56,8 @@ var MenuComponents = [
   	WelcomeCardComponent,
    	StatisticsGridComponent,
    	FleetListComponent,
-   	BearerDialogComponent
+   	BearerDialogComponent,
+    FleetGridComponent
   ],
   imports: [
     AngularModules,

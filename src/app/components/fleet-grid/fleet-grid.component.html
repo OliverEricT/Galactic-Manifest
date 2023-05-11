@@ -1,0 +1,22 @@
+<div>
+	<table>
+		<tr>
+			<th>
+				Ship Name
+			</th>
+			<th>
+				Last Recorded Location
+			</th>
+		</tr>
+		<tr>
+			<ng-container *ngFor="let ship of fleet">
+				<td>
+					{{ship.symbol}}
+				</td>
+				<td>
+					{{ship.nav.waypointSymbol}}
+				</td>
+			</ng-container>
+		</tr>
+	</table>
+</div>
